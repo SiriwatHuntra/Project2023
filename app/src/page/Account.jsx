@@ -1,13 +1,13 @@
 import React from 'react'
-
+import Form from '../component/Form'
 
 function Account() {
+
+
   return (
     <div>
-      <h1>Accout</h1>
-
-
-
+        <h1>Account</h1>
+        <Form/>
     </div>
   )
 }
