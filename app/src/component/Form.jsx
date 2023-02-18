@@ -3,21 +3,6 @@ import { app } from '../firebase'
 
 function Form() {
 
-  const [title ,setTitle] = useState('') ;
-
-  const handleOnChange = (e) => {
-    setTitle(e.target.value)
-  }
-
-  const createInfo =() => {
-    const infoRef = firebase.database().ref('info')
-    const info = {
-        title,
-        complete: false
-    }
-    infoRef.push(info)
-}
-
   return (
     <div>
     <div class="mb-3">
