@@ -1,11 +1,27 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Protecter from "./component/Protecter";
 import { AuthContextProvider } from "./context/AuthContext";
+import Home from "./page/Home";
+import Login from "./page/Login";
+import Account from "./page/Account";
+import Navbar from "./component/NavBar";
 
 function App() {
   return (
     <div className="App">
       <AuthContextProvider>
-
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Account"
+          element={
+            <Protecter>
+              <Account/>
+            </Protecter>
+          }/>
+        </Routes>
       </AuthContextProvider>
     </div>
   );

@@ -10,11 +10,10 @@ import { auth } from "../firebase";
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({children}) => {
-
     const [user, setUser] = useState({});
+
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
-        //signInWithPopup(auth, provider)
         signInWithRedirect(auth, provider)
     };
 
@@ -40,5 +39,5 @@ export const AuthContextProvider = ({children}) => {
     };
 
 export const UserAuth =() => {
-    return useContext(AuthContext)
-}
+    return useContext(AuthContext);
+};
