@@ -5,7 +5,7 @@ import { UserAuth } from "../context/AuthContext";
 const Protecter = ({childern}) => {
     const {user} = UserAuth();
     if(!user) {
-        return<Navigate to="/"/>
+        return<Navigate to="/Login"/>
     }
 
     return childern;
