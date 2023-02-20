@@ -1,16 +1,6 @@
 import React from 'react'
-import { UserAuth } from '../context/AuthContext';
 
 function Home() {
-  const { logOut } = UserAuth();
-
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div>
