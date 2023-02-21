@@ -1,19 +1,28 @@
 import React from 'react'
 import { auth } from '../firebase';
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
+import { GoogleButton } from 'react-google-button';
+
 
 function LogIn() {
 
-    const signWithGoogle = () => {    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider).then(res => {
+    const  navigate = useNavigate();
+
+    const signWithGoogle = () => { const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider).then(res => {
         console.log(res)
+        navigate('/')
+
     }).catch(err => {
         console.log(err)
     })}
 
   return (
     <div>
-      <button onClick={signWithGoogle}>Log In</button>
+      <div className='max-w-[240px] m-auto py-4'>
+        <GoogleButton onClick={signWithGoogle} />
+      </div>
     </div>
   )
 }
