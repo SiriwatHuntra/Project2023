@@ -1,17 +1,20 @@
 import React from 'react'
+import { auth, db } from '../firebase';
+import { doc, getDoc, onSnapshot } from "firebase/firestore";
 
 function Infocard() {
-  return (
+    const user = auth.currentUser;
+
+    return (
 <div class="card">
-    <h2 className='logo'>User Info</h2>
+<h2 className='logo'>User Info</h2>
   <div class="card-body">
-    This is some text within a card body.
+    <span>{user.email}</span>
   </div>
   <div class="card-body">
-    This is some text within a card body.
+    <span>{user.uid}</span>
   </div>
   <div class="card-body">
-    This is some text within a card body.
   </div>
 </div>
   )

@@ -9,12 +9,14 @@ function Form() {
         e.preventDefault();
         const name = e.target[0].value;
         const lastName = e.target[1].value;
+        const faculty = e.target[2].value;
         const uid = user.uid
         try{
-            await setDoc(doc(db, 'name', uid),{
+            await setDoc(doc(db, 'Users', uid),{
             uid,
             name,
-            lastName
+            lastName,
+            faculty
             })
 
         }catch(err){
@@ -37,8 +39,8 @@ function Form() {
         </div>
 
         <div class="mb-3">
-            <label for="lastName " class="form-label">Faculty </label>
-            <input type="text" class="form-control" id="lastName"/>
+            <label for="faculty " class="form-label">Faculty </label>
+            <input type="text" class="form-control" id="faculty"/>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

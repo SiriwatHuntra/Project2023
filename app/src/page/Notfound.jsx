@@ -5,7 +5,8 @@ function Notfound() {
   return (
     <div>
       <Navbar/>
-      <span className='logo'> 404 not found</span>
+        <h1
+        className='logo font-size: 200px'> 404 not found</h1>
     </div>
   )
 }

@@ -5,7 +5,9 @@ import Navbar from '../component/Navbar'
 function Editprofile() {
   return (
     <div>
-      <Form/>
+    <h1>Edit Porfile</h1>
+    <Navbar/>
+      <Form />
     </div>
   )
 }

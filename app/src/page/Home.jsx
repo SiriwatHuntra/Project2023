@@ -7,8 +7,8 @@ function Home() {
 
   return (
     <div>
-      <Navbar/>
       <h1>Home</h1>
+      <Navbar/>
       <Infocard/>
       <button onClick={signOut}>Log Out</button>
     </div>
