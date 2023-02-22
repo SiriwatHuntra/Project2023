@@ -21,6 +21,8 @@ function LogIn() {
   return (
     <div>
       <div className='max-w-[240px] m-auto py-4'>
+        <h1>AvatarCreater</h1>
+        <h2>Login With Google</h2>
         <GoogleButton onClick={signWithGoogle} />
       </div>
     </div>
