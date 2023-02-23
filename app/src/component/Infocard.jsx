@@ -10,7 +10,6 @@ function Infocard() {
 
   async function getUser(){
     const docSnap = await getDoc(docRef);
-
     return docSnap
   }
 
