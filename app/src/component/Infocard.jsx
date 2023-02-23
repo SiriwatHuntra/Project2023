@@ -1,9 +1,20 @@
 import React from 'react'
 import { auth, db } from '../firebase';
-import { doc, getDoc, onSnapshot } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 
 function Infocard() {
     const user = auth.currentUser;
+
+  //data reader // Prob: code green but dosen't show any thing
+  const docRef = doc(db, 'Users', user.uid)
+
+  async function getUser(){
+    const docSnap = await getDoc(docRef);
+
+    return docSnap
+  }
+
+
 
     return (
 <div class="card">
@@ -15,6 +26,7 @@ function Infocard() {
     <span>{user.uid}</span>
   </div>
   <div class="card-body">
+    <span>{getUser}</span>
   </div>
 </div>
   )
