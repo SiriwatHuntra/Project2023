@@ -1,43 +1,31 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { app } from '../firebase';
+import React from 'react'
 import { auth } from '../firebase';
-import { Link } from 'react-router-dom';
-const LogIn = () => {
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
+import { GoogleButton } from 'react-google-button';
 
-    const [err, setErr] = useState(false)
 
-    const handleSubmit = async (e) =>{
-        e.preventDefault();
-        const email = e.target[0].value;
-        const password = e.target[1].value;
-        const navigate = useNavigate();
-        try{
-            await signInWithEmailAndPassword(auth, email, password);
-            navigate('/Home')
+function LogIn() {
 
-        }catch(err){
-            setErr(true);
-        }
-    }
+    const  navigate = useNavigate();
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"/>
-        </div>
-        <p>You don't have an account? <Link to="/register">Register</Link></p>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-  )
-}
+     const signWithGoogle = () => { const provider = new GoogleAuthProvider();
+         signInWithPopup(auth, provider).then(res => {
+         console.log(res)
+        navigate('/Home')
 
-export default LogIn
+    }).catch(err => {
+         console.log(err)
+     })}
+
+   return (
+     <div>
+       <div className='max-w-[240px] m-auto py-4'>
+         <h1>AvatarCreater</h1>
+         <GoogleButton onClick={signWithGoogle} />
+       </div>
+     </div>
+   )
+ }
+
+ export default LogIn
