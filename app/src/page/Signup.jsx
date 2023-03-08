@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { app, auth, storage } from '../firebase'
 
 const Signup = () => {
@@ -21,7 +21,7 @@ const Signup = () => {
         }
 
         if (currentUser){
-            navigate('Home')
+            navigate('/')
         }
     }
 
@@ -39,6 +39,7 @@ const Signup = () => {
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+        <p>have an account? <Link to="/login">Login</Link> </p>
     </div>
   )
 }
