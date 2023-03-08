@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { app, auth, storage } from '../firebase'
 
 const Signup = () => {
-    const [currentUser, setCurrentUser] = useState(null);
+
     const navigate = useNavigate();
     const [err,setErr] = useState(false)
 
@@ -14,16 +14,9 @@ const Signup = () => {
         const userName = e.target[0].value;
         const email = e.target[1].value;
         const password = e.target[2].value;
-        try{
-            await createUserWithEmailAndPassword(auth, email, password);
-            setCurrentUser(true);
-        }catch(erorr){
-            alert(err)
-        }
+        const icon = e.target[3].files[0];
 
-        if (currentUser){
-            navigate('/')
-        }
+
     }
 
   return (
