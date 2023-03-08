@@ -6,12 +6,21 @@ import { auth } from '../firebase';
 
 function Home() {
 
+  const LogOut = () => {
+    signOut(auth).then(() => {
+      console.log("log out success")
+    }).catch((err) => {
+      console.log(err)
+    });
+  }
+
   return (
+
     <div>
       <h1>Home</h1>
       <Navbar/>
       <Infocard/>
-      <button onClick={()=> signOut(auth)}>Log Out</button>
+      <button onClick={LogOut}>Log Out</button>
     </div>
   )
 }

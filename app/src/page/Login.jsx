@@ -4,13 +4,13 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
 import { GoogleButton } from 'react-google-button';
 
-
-function LogIn() {
+const LogIn = () => {
 
     const  navigate = useNavigate();
 
-     const signWithGoogle = () => { const provider = new GoogleAuthProvider();
-         signInWithPopup(auth, provider).then(res => {
+     const signWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+         signInWithPopup(auth, provider).then((res) => {
          console.log(res)
         navigate('/Home')
 
@@ -19,7 +19,7 @@ function LogIn() {
      })}
 
    return (
-     <div>
+     <div className='container'>
        <div className='max-w-[240px] m-auto py-4'>
          <h1>AvatarCreater</h1>
          <GoogleButton onClick={signWithGoogle} />

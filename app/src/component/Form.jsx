@@ -28,22 +28,22 @@ function Form() {
   return (
     <div>
     <form onSubmit={handleSubmit}>
-        <div class="mb-3">
-            <label for="name " class="form-label">Name </label>
-            <input type="text" class="form-control" id="name"/>
+        <div className="mb-3">
+            <label for="name " className="form-label">Name </label>
+            <input type="text" className="form-control" id="name"/>
         </div>
 
-        <div class="mb-3">
-            <label for="lastName " class="form-label">LastName </label>
-            <input type="text" class="form-control" id="lastName"/>
+        <div className="mb-3">
+            <label for="lastName " className="form-label">LastName </label>
+            <input type="text" className="form-control" id="lastName"/>
         </div>
 
-        <div class="mb-3">
-            <label for="faculty " class="form-label">Faculty </label>
-            <input type="text" class="form-control" id="faculty"/>
+        <div className="mb-3">
+            <label for="faculty " className="form-label">Faculty </label>
+            <input type="text" className="form-control" id="faculty"/>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
     </form>
     </div>
   )

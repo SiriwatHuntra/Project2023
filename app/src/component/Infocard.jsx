@@ -16,15 +16,15 @@ function Infocard() {
 
 
     return (
-<div class="card">
-<h2 className='logo'>User Info</h2>
-  <div class="card-body">
+<div className="card">
+<h2 classNameName='logo'>User Info</h2>
+  <div className="card-body">
     <span>{user.email}</span>
   </div>
-  <div class="card-body">
+  <div className="card-body">
     <span>{user.uid}</span>
   </div>
-  <div class="card-body">
+  <div className="card-body">
     <span>{getUser}</span>
   </div>
 </div>
