@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate }from "react-router-dom";
+import { Routes, Route }from "react-router-dom";
 import Home from "./page/Home";
 import LogIn from "./page/Login";
 
-import React, { useContext } from "react";
+import React from "react";
 import Notfound from "./page/Notfound";
 import Editprofile from "./page/Editprofile";
-import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
 
@@ -28,8 +27,8 @@ function App() {
         </ProtectedRoute>
       }/> */}
 
-    <Route path="/Home" element={<Home/>}/>
-    <Route path="/" element={<LogIn/>}/>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/Login" element={<LogIn/>}/>
     <Route path="*" element={<Notfound/>}/>
     <Route path="/Editprofile" element={<Editprofile/>}/>
 
