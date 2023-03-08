@@ -4,40 +4,22 @@ import React from "react";
 import Notfound from "./page/Notfound";
 import Editprofile from "./page/Editprofile";
 import Signup from "./page/Signup";
-import { BrowserRouter, Routes, Route, Navigate }from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "./context/AuthContext";
+import { Routes, Route }from "react-router-dom";
+
 
 function App() {
 
-
-    //  const ProtectedRoute  = ({children})=> {
-    //    if(!currentUser) {
-    //      return <Navigate to='/Login'/>
-    //    }
-    //  return children
-    //  }
-
   return (
-    //  <BrowserRouter>
-    //  <Routes>
-      /* <Route path="/" />
-       <Route index element={
-         <ProtectedRoute>
-           <Home/>
-         </ProtectedRoute>
-       }/> */
+
     <Routes>
-    <Route path="/" element={<Home/>}/>
     <Route path="/Login" element={<LogIn/>}/>
     <Route path="/Register" element={<Signup/>}/>
     <Route path="*" element={<Notfound/>}/>
+
+    <Route path="/" element={<Home/>}/>
     <Route path="/Editprofile" element={<Editprofile/>}/>
     </Routes>
 
-
-    // </Routes>
-    // </BrowserRouter>
 
   );
 }
