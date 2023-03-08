@@ -6,14 +6,6 @@ import { auth } from '../firebase';
 
 function Home() {
 
-  const LogOut = () => {
-    signOut(auth).then(() => {
-      console.log("log out success")
-    }).catch((err) => {
-      console.log(err)
-    });
-  }
-
   return (
 
     <div>
