@@ -21,7 +21,6 @@ const LogInWithGoogle = () => {
    return (
      <div className='container'>
        <div className='max-w-[240px] m-auto py-4'>
-         <h1>AvatarCreater</h1>
          <GoogleButton onClick={signWithGoogle} />
        </div>
      </div>

@@ -1,12 +1,15 @@
 import React from 'react'
+import Login_Form from '../component/Login_Form';
 import LogInWithGoogle from '../component/Login_Google';
 
 const LogIn = () => {
 
    return (
      <div className='container'>
-        <LogInWithGoogle/>
+        <h1>AvatarCreater</h1>
 
+        <Login_Form/>
+        <LogInWithGoogle/>
      </div>
    )
  }
