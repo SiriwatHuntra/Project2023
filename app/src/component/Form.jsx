@@ -26,7 +26,7 @@ function Form() {
     }
 
   return (
-    <div>
+    <div >
     <form onSubmit={handleSubmit}>
         <div className="mb-3">
             <label for="name " className="form-label">Name </label>
