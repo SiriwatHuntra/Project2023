@@ -12,7 +12,7 @@ function Home() {
       <h1>Home</h1>
       <Navbar/>
       <Infocard/>
-      <button onClick={LogOut}>Log Out</button>
+      <button onClick={()=>signOut(auth)}>Log Out</button>
     </div>
   )
 }

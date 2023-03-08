@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { app, auth, storage } from '../firebase'
 
 const Signup = () => {
-    const [currentUser, setCurrentUser] = useState(Null);
+    const [currentUser, setCurrentUser] = useState(null);
     const navigate = useNavigate();
+    const [err,setErr] = useState(false)
+
 
     const handleSubmit = async (e)=>{
         e.preventDefault();

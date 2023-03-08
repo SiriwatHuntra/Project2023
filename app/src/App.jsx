@@ -3,6 +3,7 @@ import LogIn from "./page/Login";
 import React from "react";
 import Notfound from "./page/Notfound";
 import Editprofile from "./page/Editprofile";
+import Signup from "./page/Signup";
 import { BrowserRouter, Routes, Route, Navigate }from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
@@ -30,6 +31,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/Login" element={<LogIn/>}/>
+    <Route path="/Register" element={<Signup/>}/>
     <Route path="*" element={<Notfound/>}/>
     <Route path="/Editprofile" element={<Editprofile/>}/>
     </Routes>
