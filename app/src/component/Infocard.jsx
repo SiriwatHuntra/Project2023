@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { auth, db } from '../firebase';
-import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 
 function Infocard() {
     const user = auth.currentUser;
