@@ -1,10 +1,11 @@
 import Home from "./page/Home";
 import LogIn from "./page/Login";
-import React from "react";
+import React, { useContext } from "react";
 import Notfound from "./page/Notfound";
 import Editprofile from "./page/Editprofile";
 import Signup from "./page/Signup";
-import { Routes, Route}from "react-router-dom";
+import { Routes, Route, Navigate}from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   //   return children
   // }
 
+
   return (
     // <BrowserRouter>
     // <Routes>
@@ -31,8 +33,8 @@ function App() {
     <Route path="/Register" element={<Signup/>}/>
     <Route path="/*" element={<Notfound/>}/>
 
-    <Route path="/" element={<Home/>}/>
-    <Route path="/Editprofile" element={<Editprofile/>}/>
+    <Route path="/" element={<Home />} />
+    <Route path="/Editprofile" element={<Editprofile />} />
     </Routes>
     /* </Routes>
     </BrowserRouter> */
