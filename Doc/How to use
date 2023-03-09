@@ -1,0 +1,4 @@
+1.git clone
+2.open app folder
+3.run command "npm install" *that will install every thing you need
+4.running web by "npm start"
