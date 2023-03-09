@@ -7,7 +7,6 @@ const LogIn = () => {
    return (
      <div className='container'>
         <h1>AvatarCreater</h1>
-
         <Login_Form/>
         <LogInWithGoogle/>
      </div>
