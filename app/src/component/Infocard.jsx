@@ -1,23 +1,14 @@
 import React from 'react'
 import { auth, db } from '../firebase';
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, collection, onSnapshot } from "firebase/firestore";
 
 function Infocard() {
     const user = auth.currentUser;
+    const docRef = doc(db, 'Users', user.uid)
 
-    // const docRef = doc(db, "Users", "");
-    async function getData() {
-      const docRef = doc(db, "Users", user.uid);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        return docSnap.data()
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    }
-
+    onSnapshot(docRef, (doc)=> {
+      console.log(doc.data())
+    });
 
     return (
 <div className="card">
@@ -26,11 +17,9 @@ function Infocard() {
     <span>{user.email}</span>
   </div>
   <div className="card-body">
-    <span>{user.uid}</span>
+    <span>{}</span>
   </div>
-  <div className="card-body">
-    <span>{getData}</span>
-  </div>
+
 </div>
   )
 }
