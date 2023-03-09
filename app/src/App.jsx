@@ -1,11 +1,10 @@
 import Home from "./page/Home";
 import LogIn from "./page/Login";
-import React, { useContext } from "react";
+import React from "react";
 import Notfound from "./page/Notfound";
 import Editprofile from "./page/Editprofile";
 import Signup from "./page/Signup";
-import { Routes, Route, Navigate, BrowserRouter }from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
+import { Routes, Route}from "react-router-dom";
 
 
 function App() {
@@ -40,7 +39,5 @@ function App() {
 
   );
 }
-
-
 export default App;
 

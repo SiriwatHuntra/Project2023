@@ -5,27 +5,31 @@ import { getDoc, doc } from "firebase/firestore";
 function Infocard() {
     const user = auth.currentUser;
 
-  //data reader // Prob: code green but dosen't show any thing
-  const docRef = doc(db, 'Users', user.uid)
+    // const docRef = doc(db, "Users", "");
+    async function getData() {
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
 
-  async function getUser(){
-    const docSnap = await getDoc(docRef);
-    return docSnap
-  }
-
+      if (docSnap.exists()) {
+        return docSnap.data()
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }
 
 
     return (
 <div className="card">
 <h2 classNameName='logo'>User Info</h2>
-  <div className="card-body">
+   <div className="card-body">
     <span>{user.email}</span>
   </div>
   <div className="card-body">
     <span>{user.uid}</span>
   </div>
   <div className="card-body">
-    <span>{getUser}</span>
+    <span>{getData}</span>
   </div>
 </div>
   )
