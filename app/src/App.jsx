@@ -6,6 +6,7 @@ import Editprofile from "./page/Editprofile";
 import Signup from "./page/Signup";
 import { Routes, Route, Navigate}from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
+import ImageSwitcher from "./page/charEditDemo";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
 
     <Route path="/" element={<Home />} />
     <Route path="/Editprofile" element={<Editprofile />} />
+    <Route path="/CharaDemo" element={<ImageSwitcher />} />
     </Routes>
     /* </Routes>
     </BrowserRouter> */

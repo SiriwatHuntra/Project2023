@@ -22,6 +22,9 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/Editprofile">Edit Profile</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/CharaDemo">CharaDemo</Link>
+            </li>
           </ul>
         </div>
       </div>

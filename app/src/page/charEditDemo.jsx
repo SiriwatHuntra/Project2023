@@ -1,44 +1,63 @@
 import React, { useState } from 'react';
+import Navbar from '../component/Navbar';
+import '../Decorate/switcher.css';
 
-function ImageSwitcher() {
-  // Define an array of image sources
-  const imageSources = [
-    'top-source.jpg',
-    'bottom-source.jpg',
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-  ];
+const ImageSwitcher = () => {
+  const [topImageIndex, setTopImageIndex] = useState(0);
+  const [bottomImageIndex, setBottomImageIndex] = useState(0);
 
-  // Set up state to keep track of which image is currently displayed
-  const [currentImage, setCurrentImage] = useState(0);
+  const topImages = ['../source/top-image/image1.jpg', '../source/top-image/image2.jpg', '../source/top-image/image3.jpg'];
+  const bottomImages = ['../source/bottom-image/image1.jpg', '../source/bottom-image/image2.jpg', '../source/bottom-image/image3.jpg'];
 
-  // Event handler function to switch to the previous image
-  const previousImage = () => {
-    const newIndex = currentImage === 0 ? imageSources.length - 1 : currentImage - 1;
-    setCurrentImage(newIndex);
+  const handleTopLeftClick = () => {
+    if (topImageIndex === 0) {
+      setTopImageIndex(topImages.length - 1);
+    } else {
+      setTopImageIndex(topImageIndex - 1);
+    }
   };
 
-  // Event handler function to switch to the next image
-  const nextImage = () => {
-    const newIndex = currentImage === imageSources.length - 1 ? 0 : currentImage + 1;
-    setCurrentImage(newIndex);
+  const handleTopRightClick = () => {
+    if (topImageIndex === topImages.length - 1) {
+      setTopImageIndex(0);
+    } else {
+      setTopImageIndex(topImageIndex + 1);
+    }
+  };
+
+  const handleBottomLeftClick = () => {
+    if (bottomImageIndex === 0) {
+      setBottomImageIndex(bottomImages.length - 1);
+    } else {
+      setBottomImageIndex(bottomImageIndex - 1);
+    }
+  };
+
+  const handleBottomRightClick = () => {
+    if (bottomImageIndex === bottomImages.length - 1) {
+      setBottomImageIndex(0);
+    } else {
+      setBottomImageIndex(bottomImageIndex + 1);
+    }
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <img src={imageSources[currentImage]} alt="Top image" className="img-fluid" />
-          <button onClick={previousImage}>Previous</button>
-          <button onClick={nextImage}>Next</button>
-        </div>
-        <div className="col">
-          <img src={imageSources[currentImage + 1]} alt="Bottom image" className="img-fluid" />
-        </div>
+    <div>
+    <Navbar/>
+    <div className="image-switcher">
+      <div className="image-switcher-column">
+        <button className="image-switcher-button" onClick={handleTopLeftClick}>{'<'}</button>
+        <img className="image-switcher-image" src={topImages[topImageIndex]} alt="" />
+        <button className="image-switcher-button" onClick={handleTopRightClick}>{'>'}</button>
+      </div>
+      <div className="image-switcher-column">
+        <button className="image-switcher-button" onClick={handleBottomLeftClick}>{'<'}</button>
+        <img className="image-switcher-image" src={bottomImages[bottomImageIndex]} alt="" />
+        <button className="image-switcher-button" onClick={handleBottomRightClick}>{'>'}</button>
       </div>
     </div>
+    </div>
   );
-}
+};
 
 export default ImageSwitcher;

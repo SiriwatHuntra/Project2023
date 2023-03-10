@@ -1,0 +1,32 @@
+.image-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .image-switcher-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .image-switcher-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-switcher-button {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ccc;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+
