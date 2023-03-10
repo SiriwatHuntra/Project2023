@@ -16,7 +16,7 @@ function Login_Form() {
 
         try{
             await signInWithEmailAndPassword(auth, email, password);
-            navigate("/")
+            navigate("/Home")
         }catch(err){
             setErr(true);
         }

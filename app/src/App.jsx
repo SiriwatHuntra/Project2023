@@ -30,11 +30,11 @@ function App() {
     // <BrowserRouter>
     // <Routes>
     <Routes >
-    <Route path="/Login" element={<LogIn/>}/>
+    <Route path="/" element={<LogIn/>}/>
     <Route path="/Register" element={<Signup/>}/>
     <Route path="/*" element={<Notfound/>}/>
 
-    <Route path="/" element={<Home />} />
+    <Route path="/Home" element={<Home />} />
     <Route path="/Editprofile" element={<Editprofile />} />
     <Route path="/CharaDemo" element={<ImageSwitcher />} />
     </Routes>

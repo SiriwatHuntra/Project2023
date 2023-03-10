@@ -12,7 +12,7 @@ const LogInWithGoogle = () => {
         const provider = new GoogleAuthProvider();
          signInWithPopup(auth, provider).then((res) => {
          console.log(res)
-        navigate('/')
+        navigate('/Home')
 
     }).catch(err => {
          console.log(err)

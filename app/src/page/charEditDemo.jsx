@@ -43,6 +43,7 @@ const ImageSwitcher = () => {
 
   return (
     <div>
+      <h1>CharacterEdti**Demo**</h1>
       <Navbar />
       <div className="image-switcher">
         <div className="image-switcher-column">
