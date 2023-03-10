@@ -43,19 +43,27 @@ const ImageSwitcher = () => {
 
   return (
     <div>
-    <Navbar/>
-    <div className="image-switcher">
-      <div className="image-switcher-column">
-        <button className="image-switcher-button" onClick={handleTopLeftClick}>{'<'}</button>
-        <img className="image-switcher-image" src={topImages[topImageIndex]} alt="" />
-        <button className="image-switcher-button" onClick={handleTopRightClick}>{'>'}</button>
+      <Navbar />
+      <div className="image-switcher">
+        <div className="image-switcher-column">
+          <button className="image-switcher-arrow image-switcher-left-arrow" onClick={handleTopLeftClick}>
+            {'<'}
+          </button>
+          <img className="image-switcher-image" src={topImages[topImageIndex]} alt="" />
+          <button className="image-switcher-arrow image-switcher-right-arrow" onClick={handleTopRightClick}>
+            {'>'}
+          </button>
+        </div>
+        <div className="image-switcher-column">
+          <button className="image-switcher-arrow image-switcher-left-arrow" onClick={handleBottomLeftClick}>
+            {'<'}
+          </button>
+          <img className="image-switcher-image" src={bottomImages[bottomImageIndex]} alt="" />
+          <button className="image-switcher-arrow image-switcher-right-arrow" onClick={handleBottomRightClick}>
+            {'>'}
+          </button>
+        </div>
       </div>
-      <div className="image-switcher-column">
-        <button className="image-switcher-button" onClick={handleBottomLeftClick}>{'<'}</button>
-        <img className="image-switcher-image" src={bottomImages[bottomImageIndex]} alt="" />
-        <button className="image-switcher-button" onClick={handleBottomRightClick}>{'>'}</button>
-      </div>
-    </div>
     </div>
   );
 };
