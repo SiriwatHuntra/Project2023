@@ -1,17 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../Decorate/navbar.css';
 
 function Navbar() {
   return (
-<div>
-<nav className="navbar navbar-light bg-light">
-  <form className="container-fluid justify-content-start">
-  <button className="btn btn-sm btn-outline-secondary" type="button" ><Link to='/'>Home</Link></button>
-  <button className="btn btn-sm btn-outline-secondary" type="button"><Link to='/Editprofile'>Edit Profile</Link></button>
-  </form>
-</nav>
-</div>
-  )
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Editprofile">Edit Profile</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

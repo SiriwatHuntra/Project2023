@@ -4,12 +4,6 @@ import { doc, onSnapshot } from "firebase/firestore";
 
 function Infocard() {
     const user = auth.currentUser;
-    // const docRef = doc(db, 'Users', user.uid)
-
-    //   onSnapshot(docRef, (doc)=> {
-    //     const userName = doc.data().name
-    //     return userName
-    //   });
     const [userName, setUserName] = useState('');
     const [userLastName, setUserLastName] = useState('');
     const [userFaculty, setUserFaculty] = useState('');

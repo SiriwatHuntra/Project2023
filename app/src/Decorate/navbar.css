@@ -1,0 +1,29 @@
+.navbar {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+  }
+
+  .nav-item {
+    margin-right: 1rem;
+  }
+
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #666;
+  }
