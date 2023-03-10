@@ -16,7 +16,7 @@ function Home() {
       <h1>Home</h1>
       <Navbar/>
       <Infocard/>
-      <button className="logout-button" onClick={()=>signOut(auth).then(navigate("Login"))}>logout</button>
+      <button className="logout-button" onClick={()=>signOut(auth).then(navigate("/"))}>logout</button>
     </div>
   )
 }
