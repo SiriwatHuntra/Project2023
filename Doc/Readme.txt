@@ -4,6 +4,7 @@
 3.run command "npm install" *that will install every thing you need
 4.running web by "npm start"
 
-***still have problem with route after run 
+***still have problem with route 
+   if it not work
    paste URL: http://localhost:3000/Login 
-   to go at log in page if it not work
+   to go at log in page 
